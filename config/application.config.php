@@ -7,7 +7,7 @@ return array(
         'DoctrineDataFixtureModule',
         'SONBase',
         'SONUser',
-        'SONAcl',
+//        'SONAcl',
         'SONUserRest',
     ),
     'module_listener_options' => array(

@@ -3,7 +3,7 @@
 <br />
 
 <p>
-    <a href="<?php echo $this->url('sonuser-admin/default',array('action'=>'new')); ?>">Novo</a>
+    <a class="btn btn-success" href="<?php echo $this->url('sonuser-admin/default',array('action'=>'new')); ?>">Novo</a>
 </p>
 
 <table class="table">
@@ -22,7 +22,7 @@
         <td><?php echo $entity->getEmail(); ?></td>
         <td>
             <a href="<?php echo $this->url('sonuser-admin/default',
-                    array('controller'=>'users','action'=>'edit','id'=>$entity->getId()));?>">Editar</a>
+                    array('controller'=>'users','action'=>'edit','id'=>$entity->getId()));?>"><i class="fa fa-edit"></i> Editar</a>
             
             <a href="<?php echo $this->url('sonuser-admin/default',
                     array('controller'=>'users','action'=>'delete','id'=>$entity->getId()));?>">Delete</a>
