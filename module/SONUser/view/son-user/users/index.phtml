@@ -3,7 +3,7 @@
 <br />
 
 <p>
-    <a class="btn btn-success" href="<?php echo $this->url('sonuser-admin/default',array('action'=>'new')); ?>">Novo</a>
+    <a class="btn btn-success" href="<?php echo $this->url('sonuser-admin/default',array('action'=>'new')); ?>"><i class="fa fa-plus"></i> Novo</a>
 </p>
 
 <table class="table">
@@ -21,11 +21,11 @@
         <td><?php echo $entity->getNome(); ?></td>
         <td><?php echo $entity->getEmail(); ?></td>
         <td>
-            <a href="<?php echo $this->url('sonuser-admin/default',
-                    array('controller'=>'users','action'=>'edit','id'=>$entity->getId()));?>"><i class="fa fa-edit"></i> Editar</a>
+            <a class="btn btn-warning btn-xs" href="<?php echo $this->url('sonuser-admin/default',
+                    array('controller'=>'users','action'=>'edit','id'=>$entity->getId()));?>"><i class="fa fa-pencil"></i> Editar</a>
             
-            <a href="<?php echo $this->url('sonuser-admin/default',
-                    array('controller'=>'users','action'=>'delete','id'=>$entity->getId()));?>">Delete</a>
+            <a class="btn btn-danger btn-xs" href="<?php echo $this->url('sonuser-admin/default',
+                    array('controller'=>'users','action'=>'delete','id'=>$entity->getId()));?>"><i class="fa fa-trash"></i> Delete</a>
             
         </td>
     </tr>
