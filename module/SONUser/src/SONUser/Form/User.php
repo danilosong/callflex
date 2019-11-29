@@ -25,19 +25,6 @@ class User  extends Form
         $email->setLabel("Email: ")
                 ->setAttribute('placeholder','Entre com o Email');
         $this->add($email);
-       
-        $password = new \Zend\Form\Element\Password("password");
-        $password->setLabel("Password: ")
-                ->setAttribute('placeholder','Entre com a senha');
-        $this->add($password);
-        
-        $confirmation = new \Zend\Form\Element\Password("confirmation");
-        $confirmation->setLabel("Redigite: ")
-                ->setAttribute('placeholder','Redigite a senha');
-        $this->add($confirmation);
-        
-        $csrf = new \Zend\Form\Element\Csrf("security");
-        $this->add($csrf);
         
         $this->add(array(
             'name' => 'submit',

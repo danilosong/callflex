@@ -41,18 +41,7 @@ class User {
     private $email;
 
     public function __construct(array $options = array()) {
-        /*
-          $hydrator = new Hydrator\ClassMethods;
-          $hydrator->hydrate($options, $this);
-         */
-
         (new Hydrator\ClassMethods)->hydrate($options, $this);
-
-        $this->createdAt = new \DateTime("now");
-        $this->updatedAt = new \DateTime("now");
-
-        $this->salt = base64_encode(Rand::getBytes(8, true));
-        $this->activationKey = md5($this->email . $this->salt);
     }
 
     public function getId() {

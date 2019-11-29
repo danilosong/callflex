@@ -24,20 +24,7 @@ class User extends AbstractService
     
     public function insert(array $data) {
         $entity = parent::insert($data);
-        
-        $dataEmail = array('nome'=>$data['nome'],'activationKey'=>$entity->getActivationKey());
-        
-        if($entity)
-        {
-            $mail = new Mail($this->transport, $this->view, 'add-user');
-            $mail->setSubject('Confirmação de cadastro')
-                    ->setTo($data['email'])
-                    ->setData($dataEmail)
-                    ->prepare()
-                    ->send();
-            
-            return $entity;
-        }
+        return $entity;
     }
     
     public function activate($key)
