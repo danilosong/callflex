@@ -1,31 +1,27 @@
-ZendSkeletonApplication / callflex
-=======================
+# Callflex
+## Sistema de teste
 
-Introduction
-------------
-Estrutura simples mvc ultilizando zendFramework 2 com doctrine 2
 
-Installation
-------------
+### Requisitos para executar projeto:
+1. PHP 7
+2. [Composer](https://getcomposer.org/)
 
-Necessário Composer
-----------------------------
-Após a instalação do composer
-    cd my/project/dir
-    cd callflex
-    composer install
+### Instalação:
+Clonar o projeto com `git clone https://github.com/danilosong/callflex.git` em uma pasta.
+Então, deve-se incluir o arquivo * composer.phar * na pasta deste projeto e executar
+o comando `composer install`. A pasta * Vendor * será incluída neste projeto.
 
-Em seguida crie um db no nome de "callflex" ou altere o arquivo config/autoload/doctrine_orm.local.php
-Os dados padrão estão configurado como:
-                    'host'     => 'localhost',
-                    'port'     => '3306',
-                    'user'     => 'root',
-                    'password' => 'root01',
-                    'dbname'   => 'callflex',
- Após estiver tudo configurado e com database criado execute os seguintes comandos
-    cd my/project/dir
-    cd callflex
-    php vendor/bin/doctrine-module orm:validate-schema
-    php vendor/bin/doctrine-module orm:schema-tool:update  --force --dump-sql
-
-Isso fará com que as tabelas do banco sejam atualizadas.
+É necessário que a base exista. Ao criar a base e configurá-lo no projeto
+configurações padrão são:
+'host'     => 'localhost',
+'port'     => '3306',
+'user'     => 'root',
+'password' => 'root01',
+'dbname'   => 'callflex',
+mas pode ser mudada em config/autoload/doctrine_orm.local.php
+Após ter a database criada em 'mysql' entre na pasta raiz exemplo. /var/www/callflex e
+execute os comandos:
+```
+php public/index.php orm:schema-tool:update --force
+php public/index.php data-fixture:import
+```
