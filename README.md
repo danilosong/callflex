@@ -22,6 +22,6 @@ mas pode ser mudada em config/autoload/doctrine_orm.local.php
 Após ter a database criada em 'mysql' entre na pasta raiz exemplo. /var/www/callflex e
 execute os comandos:
 ```
-php public/index.php orm:schema-tool:update --force
-php public/index.php data-fixture:import
+php vendor/bin/doctrine-module orm:validate-schema
+php vendor/bin/doctrine-module orm:schema-tool:update  --force --dump-sql
 ```
