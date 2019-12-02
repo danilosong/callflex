@@ -10,3 +10,29 @@ echo $this->form()->openTag($form);
 echo $this->formCollection($form);
 echo $this->form()->closeTag();
 ?>
+<script>
+    $(function () {
+        $('#user').submit(function(e) {
+            e.preventDefault();
+            const nome = $('input[name="nome"]').val();
+            const email = $('input[name="email"]').val();
+            $.ajax({
+                url: "<?php echo $this->url($route, array('controller' => 'users', 'action' => 'new'), [], FALSE, FALSE); ?>",
+                type: 'POST',
+                data: {
+                    nome: nome, 
+                    email: email
+                },
+                success: function (response) {
+                    $('#resp').html(response);
+                    alert('Salvo com sucesso!');
+                },
+                error: function (xhr, status, error) {
+                    alert(xhr.responseText);
+                    alert('Erro!');
+                }
+            });
+            return false;
+        });
+    });
+</script>
